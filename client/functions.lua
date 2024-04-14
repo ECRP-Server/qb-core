@@ -13,7 +13,7 @@ function QBCore.Functions.GetCoords(entity)
 end
 
 function QBCore.Functions.HasItem(items, amount)
-    return exports['qb-inventory']:HasItem(items, amount)
+    return exports['ps-inventory']:HasItem(items, amount)
 end
 
 -- Utility
@@ -180,29 +180,72 @@ RegisterNUICallback('getNotifyConfig', function(_, cb)
     cb(QBCore.Config.Notify)
 end)
 
-function QBCore.Functions.Notify(text, texttype, length, icon)
-    local message = {
-        action = 'notify',
-        type = texttype or 'primary',
-        length = length or 5000,
-    }
-
-    if type(text) == 'table' then
-        message.text = text.text or 'Placeholder'
-        message.caption = text.caption or 'Placeholder'
+if QBCore.Config.QBNotify == true then
+    function QBCore.Functions.Notify(text, texttype, length)
+        if type(text) == "table" then
+        local ttext = text.text or 'Placeholder'
+        local caption = text.caption or 'Placeholder'
+        texttype = texttype or 'primary'
+        length = length or 5000
+        SendNUIMessage({
+            action = 'notify',
+            type = texttype,
+            length = length,
+            text = ttext,
+            caption = caption
+        })
     else
-        message.text = text
+        texttype = texttype or 'primary'
+        length = length or 5000
+        SendNUIMessage({
+            action = 'notify',
+            type = texttype,
+            length = length,
+            text = text
+        })
+        end
     end
-
-    if icon then
-        message.icon = icon
-    end
-
-    SendNUIMessage(message)
 end
 
-function QBCore.Debug(resource, obj, depth)
-    TriggerServerEvent('QBCore:DebugSomething', resource, obj, depth)
+if QBCore.Config.OkOkNotify == true then
+    function QBCore.Functions.Notify(text, textype, length)
+        if type(text) == "table" then
+        local ttext = text.text or 'Placeholder'
+        local caption = text.caption or 'Placeholder'
+        local ttype = textype or 'info'
+        local length = length or 8500
+            exports['okokNotify']:Alert(ttext, caption, length, ttype)
+        else
+        local ttype = textype or 'info'
+        local length = length or 8500
+            exports['okokNotify']:Alert(text, "", length, ttype)
+        end
+    end
+    else
+        function QBCore.Functions.Notify(text, texttype, length)
+        if type(text) == "table" then
+        local ttext = text.text or 'Placeholder'
+        local caption = text.caption or 'Placeholder'
+        texttype = texttype or 'primary'
+        length = length or 5000
+        SendNUIMessage({
+            action = 'notify',
+            type = texttype,
+            length = length,
+            text = ttext,
+            caption = caption
+        })
+    else
+        texttype = texttype or 'primary'
+        length = length or 5000
+            SendNUIMessage({
+                action = 'notify',
+                type = texttype,
+                length = length,
+                text = text
+            })
+        end
+    end
 end
 
 -- Callback Functions --
