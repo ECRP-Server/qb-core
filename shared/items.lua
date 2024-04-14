@@ -382,4 +382,6 @@ QBShared.Items = {
     newscam                      = { name = 'newscam', label = 'News Camera', weight = 100, type = 'item', image = 'newscam.png', unique = true, useable = true, shouldClose = true, combinable = nil, description = 'A camera for the news' },
     newsmic                      = { name = 'newsmic', label = 'News Microphone', weight = 100, type = 'item', image = 'newsmic.png', unique = true, useable = true, shouldClose = true, combinable = nil, description = 'A microphone for the news' },
     newsbmic                     = { name = 'newsbmic', label = 'Boom Microphone', weight = 100, type = 'item', image = 'newsbmic.png', unique = true, useable = true, shouldClose = true, combinable = nil, description = 'A Useable BoomMic' },
+
+    carkey 				 		 = {name = 'carkey', 			  	  		label = 'Vehicle Keys', 			weight = 100, 		type = 'item', 		image = 'carkey.png', 				unique = true, 		useable = true, 	shouldClose = true,   combinable = nil,   	description = 'Vehicle Key Fob'},
 }
