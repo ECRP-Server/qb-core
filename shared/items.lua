@@ -384,4 +384,12 @@ QBShared.Items = {
     newsbmic                     = { name = 'newsbmic', label = 'Boom Microphone', weight = 100, type = 'item', image = 'newsbmic.png', unique = true, useable = true, shouldClose = true, combinable = nil, description = 'A Useable BoomMic' },
 
     carkey 				 		 = {name = 'carkey', 			  	  		label = 'Vehicle Keys', 			weight = 100, 		type = 'item', 		image = 'carkey.png', 				unique = true, 		useable = true, 	shouldClose = true,   combinable = nil,   	description = 'Vehicle Key Fob'},
+
+    ['carwheel'] 			     = {['name'] = 'carwheel', 					['label'] = 'Car Wheel', 				['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'carwheel.png', 			['unique'] = false, 	['useable'] = false, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A wheel from a vehicle'},
+['cardoor'] 			     = {['name'] = 'cardoor', 					['label'] = 'Car Door', 				['weight'] = 1500, 		['type'] = 'item', 		['image'] = 'cardoor.png', 			['unique'] = false, 	['useable'] = false, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A door from a vehicle'},
+['carhood'] 			     = {['name'] = 'carhood', 					['label'] = 'Car Hood', 				['weight'] = 1500, 		['type'] = 'item', 		['image'] = 'carhood.png', 			['unique'] = false, 	['useable'] = false, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A hood from a vehicle'},
+['cartrunk'] 			     = {['name'] = 'cartrunk', 					['label'] = 'Car Trunk', 				['weight'] = 1500, 		['type'] = 'item', 		['image'] = 'cartrunk.png', 			['unique'] = false, 	['useable'] = false, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A trunk from a vehicle'},
+['carradio'] 			     = {['name'] = 'carradio', 					['label'] = 'Car Radio', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 'carradio.png', 			['unique'] = false, 	['useable'] = false, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A radio from a vehicle'},
+["chopkit"] = { ["name"] = "chopkit", ["label"] = "Special Toolkit", ["weight"] = 3000, ["type"] = "item", ["image"] = "chopkit.png", ["unique"] = true, ['useable'] = true, ["shouldClose"] = true, ["combinable"] = nil, ["description"] = "A special toolkit." },
+
 }
